@@ -1,0 +1,125 @@
+- test:
+    name: test_login_success
+    method: POST
+    url: https://live-admin-qa1.youfenba.com/api/v1/login
+    json:
+            username: admin
+            password: 123123
+    extract:
+        200
+
+- test:
+    name: test_login_nousername
+    method: POST
+    url: https://live-admin-qa1.youfenba.com/api/v1/login
+    json:
+          username:
+          password: 123123
+    extract:
+          200
+
+- test:
+    name: test_login_no_passwd
+    method: POST
+    url: https://live-admin-qa1.youfenba.com/api/v1/login
+    json:
+          username: admin
+          password:
+    extract:
+          200
+
+- test:
+    name: test_login_username_error
+    method: POST
+    url: https://live-admin-qa1.youfenba.com/api/v1/login
+    json:
+          username: admin1
+          password: 123123
+    extract:
+          200
+
+- test:
+    name: test_login_passwd_error
+    method: POST
+    url: https://live-admin-qa1.youfenba.com/api/v1/login
+    json:
+          username: admin
+          password: 123456
+    extract:
+          200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- test:
+     name: test_create
+     method: POST
+     url: https://live-admin-qa1.youfenba.com/api/v1/manager
+     json:
+       - company: company
+         company_short: testcompany
+         logo: 1
+         password: 123123
+         username:
+     extract:
+       200
+- test:
+    name: test_alluser_serch
+    method: GET
+    url: https://live-admin-qa1.youfenba.com/api/v1/manager?
+    json:
+            page: 1
+            limit: 50
+    extract:
+        200
+- test:
+      name: test_username_serch
+      method: GET
+      url: https://live-admin-qa1.youfenba.com/api/v1/manager?
+      json:
+        page: 1
+        limit: 50
+        name: 17706531630
+      extract:
+        testuser-勿删
+
+
+
+
