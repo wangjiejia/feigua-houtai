@@ -8,9 +8,9 @@
 """
 """运营后台直登前台账户"""
 from tools.gettoken import test_headers
-from tests.test_user_create import test_createsuccess
 import requests
 import pytest
+from tools.test_user import test_createsuccess
 headers=test_headers()
 """获取直登用户的token"""
 def test_auth_login():

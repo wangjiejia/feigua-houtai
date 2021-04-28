@@ -85,7 +85,7 @@ class Test_DButil(object):
     def test_delete(self,**kwargs):
         # delect from manager where username = ""
         table = 'table' in kwargs and kwargs['table'] or '*'
-        field = 'field' in kwargs and kwargs['field'] or '*'
+        field = 'field' in  kwargs and kwargs['field'] or '*'
         where = 'where' in kwargs and kwargs['where']
         sql1 = 'delete from %s where %s'%(table,field)
         print(sql1)

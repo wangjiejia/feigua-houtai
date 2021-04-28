@@ -48,6 +48,17 @@
     extract:
           200
 
+- test:
+    name: test_delete
+    method: DELETE
+    url: https://live-admin-qa1.youfenba.com/api/v1/manager
+    json:
+          username: admin
+          password: 123456
+    extract:
+          200
+
+
 
 
 
