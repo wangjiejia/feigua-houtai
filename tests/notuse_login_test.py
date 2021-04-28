@@ -6,18 +6,20 @@
 @IDE ：PyCharm
 @Motto：ABC(Always Be Coding)
 """
+import sys
+
 import pytest
 import requests
-
+from tests.Test_get_yml_data import Test_get_yml_data
+x = Test_get_yml_data()
 headers = {'user-agent': 'Mozilla/5.0'}
 url = "https://live-admin-qa1.youfenba.com/api/v1/login"
-class Test_login():
+class Test_notuser_login_test():
     def test_login_success(self):
         name = sys._getframe().f_code.co_name
         # y = x.test_alluser_serch(sys._getframe().f_code.co_name)
         r1 = x.test_get_yml(name=name)
         assert r1['code'] == 200
-        assert (((r1['data'])['list'])[0])['username'] == "17706531630"
         # data = (('username', 'admin'), ('password', '123123'))
         # r = requests.post(url=url, headers=headers, data=data)
         # res = r.json()

@@ -58,7 +58,6 @@ class Test_get_yml_data():
 
 
 x = Test_get_yml_data()
-x.test_get_yml(name="test_username_serch")
 
 
 
