@@ -7,7 +7,7 @@
 @Motto：ABC(Always Be Coding)
 """
 """运营后台直登前台账户"""
-"""测试测试"""
+"""直登用户失败"""
 from tools.gettoken import test_headers
 import requests
 import pytest
@@ -28,8 +28,6 @@ def test_auth_login():
     res1 = requests.get(url=login_url,headers=auth_headers)
     r1=res1.json()
     assert r1['code'] == 200
-
-
 if __name__=='__main__':
     pytest.main(['test_auth_login.py'])
 
