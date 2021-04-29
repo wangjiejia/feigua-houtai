@@ -23,7 +23,7 @@ def test_setup_function():
     token = (r['data'])['token']
     cur = datetime.datetime.now()
     year=cur.year
-    mouth=str(cur.month)
+    mouth=cur.strftime('%m' )
     day=cur.day
     "/douyin_livetools_admin/20210429/" + "/"
     key = "/douyin_livetools_admin/" +str(year) +str(mouth) + str(day)
