@@ -42,7 +42,7 @@ def test_setup_function():
         "key":key,
         "file":('账户资料上传的文件.jpg',open(r'C:/Users/1/PycharmProjects/feigua-houtai/file/账户资料上传的文件.jpg','rb'),'image/png')
     }
-    res = requests.post(url=url2,data=dict)
+    res = requests.post(url=url2,data=dict,headers={'Content-Type':'multipart/form-data;boundary=<calculated when request is sent>'})
     r=res.json()
     print(r)
 
