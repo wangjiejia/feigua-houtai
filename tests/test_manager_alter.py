@@ -7,46 +7,50 @@
 @Motto：ABC(Always Be Coding)
 """
 """修改用户的账户资料"""
-from tools.gettoken import test_headers
+from tools.gettoken import test_getToken
 import requests
 import os
 import pytest
 import datetime
-headers = test_headers()
-url = "https://live-admin-qa1.youfenba.com/api/v1/manager/1099"
+basic_test_getToken = test_getToken()
+import string,random
+# url = "https://live-admin-qa1.youfenba.com/api/v1/manager/1099"
+headers = {'Content-Type':'multipart/form-data'}
 
 def test_setup_function():
     """获取上传图片的token"""
+    global str
     url1 = "https://live-admin-qa1.youfenba.com/api/v1/qiniu/static_token"
     res = requests.get(url=url1,headers=headers)
     r = res.json()
     token = (r['data'])['token']
     cur = datetime.datetime.now()
-    year=cur.year
-    mouth=cur.strftime('%m' )
-    day=cur.day
+    year=str(cur.year)
+    mouth=str(cur.strftime('%m'))
+    day=str(cur.day)
     "/douyin_livetools_admin/20210429/" + "/"
-    key = "/douyin_livetools_admin/" +str(year) +str(mouth) + str(day)
+    str = []
+    baseStr = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    for i in range(14):
+        str.append(random.choice(baseStr))
+        randomStr = ''.join(str)
+    key = "/douyin_livetools_admin/" +year+mouth+day +"/"+randomStr
     print(key)
+    url2 = "https://upload.qbox.me/"
+    dict = {
+        "token":token,
+        "key":key,
+        "file":('账户资料上传的文件.jpg',open(r'C:/Users/1/PycharmProjects/feigua-houtai/file/账户资料上传的文件.jpg','rb'),'image/png')
+    }
+    res = requests.post(url=url2,data=dict)
+    r=res.json()
+    print(r)
 
-    # url2 = "https://upload.qbox.me/"
-    # dict = {
-    #     "token":token,
-    #     "key":key,
-    #     "file":"C:/Users/1/PycharmProjects/feigua-houtai/file/账户资料上传的文件.jpg"
-    # }
-    # res = requests.post(url=url,data=dict,headers=headers)
-    # r=res.json()
-    # final_url = r['url']
-    # print(final_url)
-
-
-#
 # def test_manager_alter():
 #     dict={
 #         "company":"test_company",
 #         "company_short":"test公司简称",
-#         "logo":"/douyin_livetools_admin/20210429/RFSQ-NChBaWC7G-RJT-SrCSEhcnSN7-n",
+#         "logo":logo_url,
 #         "password":"admin",
 #         "remark":"test备注",
 #         "username":"18230526256"
