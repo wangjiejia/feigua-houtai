@@ -32,14 +32,13 @@ def test_message_alter():
     headers = test_headers()
     res = requests.put(url=url,headers=headers)
     r = res.json()
-    cur = datetime.datetime.now()
-    io = str(cur)
-    time = io[0:10]
-
-    user_id = data_sql.test_selectsingle(field="*", table="vip_order", where="user_id" + "=" + "'" + "1099" + "'"+ 'and' +" " + "content" +"=" + "'"+ "后台生成订单" +"'" )
-    print(user_id[0])
-    # assert (r['data'])['id'] == 1099
-    # assert r['code'] == 200
+    # cur = datetime.datetime.now()
+    # io = str(cur)
+    # time = io[0:10]
+    sech_pay_price = data_sql.test_selectsingle(field="pay_price", table="vip_order", where="user_id" + "=" + "'" + "1099" + "'"+ 'and' +" " + "content" +"=" + "'"+ "后台生成订单" +"'" )
+    assert str(sech_pay_price[0]) == pay_price
+    assert r['code'] == 200
+    del_order=data_sql.test_delete(table = "vip_order", field = "user_id" + "=" + "'" + "1099" + "'")
 
     print(r)
 
