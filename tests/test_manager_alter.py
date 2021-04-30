@@ -7,21 +7,23 @@
 @Motto：ABC(Always Be Coding)
 """
 """修改用户的账户资料"""
-from tools.gettoken import test_getToken
+from tools.gettoken import test_getToken,test_headers
 import requests
 import os
 import pytest
 import datetime
 basic_test_getToken = test_getToken()
 import string,random
-# url = "https://live-admin-qa1.youfenba.com/api/v1/manager/1099"
-headers = {'Content-Type':'multipart/form-data'}
+url = "https://live-admin-qa1.youfenba.com/api/v1/manager/1099"
+headers=test_headers()
+
 
 def test_setup_function():
+    basic_headers = {'Content-Type': 'multipart/form-data'}
     """获取上传图片的token"""
     global str
     url1 = "https://live-admin-qa1.youfenba.com/api/v1/qiniu/static_token"
-    res = requests.get(url=url1,headers=headers)
+    res = requests.get(url=url1,headers=basic_headers)
     r = res.json()
     token = (r['data'])['token']
     cur = datetime.datetime.now()
@@ -44,17 +46,18 @@ def test_setup_function():
     files = {"file":('账户资料上传的文件.jpg', open('C:/Users/1/PycharmProjects/feigua-houtai/file/账户资料上传的文件.jpg', 'rb'), 'image/jpg')}
     res = requests.post(url=url2,data=dict,files=files)
     r=res.json()
+    fianl_url = r['url']
+    print(fianl_url)
+    return fianl_url
+def test_manager_alter():
+    dict={
+        "company":"test_company",
+        "company_short":"test公司简称",
+        "logo":test_setup_function(),
+        "password":"admin",
+        "remark":"test备注",
+        "username":"18230526256"
+    }
+    res = requests.put(url=url,data=dict,headers=headers)
+    r = res.json()
     print(r)
-
-# def test_manager_alter():
-#     dict={
-#         "company":"test_company",
-#         "company_short":"test公司简称",
-#         "logo":logo_url,
-#         "password":"admin",
-#         "remark":"test备注",
-#         "username":"18230526256"
-#     }
-#     res = requests.put(url=url,data=dict,headers=headers)
-#     r = res.json()
-#     print(r)

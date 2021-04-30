@@ -27,7 +27,7 @@ def test_getToken():
     return headers
 def test_headers():
     token = test_getToken()
-    headers = {'user-agent': 'Mozilla/5.0','Authorization': 'Bearer {0}'.format(token)}
+    headers = {'user-agent': 'Mozilla/5.0','content-type': 'application/json;charset=UTF-8','Authorization': 'Bearer {0}'.format(token)}
     return headers
 
     # print( {'user-agent': 'Mozilla/5.0', 'Authorization': 'Bearer {0}'.format(test_getToken())})
