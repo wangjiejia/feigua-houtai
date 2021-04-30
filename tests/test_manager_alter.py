@@ -39,10 +39,10 @@ def test_setup_function():
     url2 = "https://upload.qbox.me/"
     dict = {
         "token":token,
-        "key":key,
-        "file":('账户资料上传的文件.jpg',open(r'C:/Users/1/PycharmProjects/feigua-houtai/file/账户资料上传的文件.jpg','rb'),'image/png')
+        "key":key
     }
-    res = requests.post(url=url2,data=dict,headers={'Content-Type':'multipart/form-data;boundary=<calculated when request is sent>'})
+    files = {"file":('账户资料上传的文件.jpg', open('C:/Users/1/PycharmProjects/feigua-houtai/file/账户资料上传的文件.jpg', 'rb'), 'image/jpg')}
+    res = requests.post(url=url2,data=dict,files=files)
     r=res.json()
     print(r)
 
