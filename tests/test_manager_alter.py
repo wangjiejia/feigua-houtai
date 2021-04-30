@@ -53,7 +53,6 @@ def test_manager_alter():
     url = "https://live-admin-qa1.youfenba.com/api/v1/manager/1099?"
     headers=test_headers()
     company = "test_测试公司",
-
     company_short="test_测试公司简称",
     logo=test_setup_function()
     remark='test备注',
@@ -61,10 +60,8 @@ def test_manager_alter():
     company = "".join(list(company)),
     company_short = "".join(list(company_short)),
     remark ="".join(list(remark)),
-
     url = url + 'company'+'='+"".join(list(company))+'&'+'company_short'+'='+"".join(list(company_short))+'&'+'logo'+"="+logo+'&'+'remark'+'='+"".join(list(remark))+'&'+'username'+'='+username
     print(url)
-
     # dict={
     #     "company":"11111",
     #     "company_short":"22222",
@@ -77,4 +74,6 @@ def test_manager_alter():
     r = res.json()
     assert r['company_short'] == company_short
     assert r['code'] == 200
+"修改会员信息"
+"""修改后校验时，可以校验修改数据是否成功，查询数据库中是否生成订单"""
 
