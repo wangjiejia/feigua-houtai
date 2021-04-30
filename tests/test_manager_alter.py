@@ -14,7 +14,7 @@ import pytest
 import datetime
 basic_test_getToken = test_getToken()
 import string,random
-url = "https://live-admin-qa1.youfenba.com/api/v1/manager/1099"
+
 headers=test_headers()
 
 
@@ -33,7 +33,7 @@ def test_setup_function():
     "/douyin_livetools_admin/20210429/" + "/"
     str = []
     baseStr = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    for i in range(14):
+    for i in range(32):
         str.append(random.choice(baseStr))
         randomStr = ''.join(str)
     key = "/douyin_livetools_admin/" +year+mouth+day +"/"+randomStr
@@ -50,14 +50,31 @@ def test_setup_function():
     print(fianl_url)
     return fianl_url
 def test_manager_alter():
-    dict={
-        "company":"test_company",
-        "company_short":"test公司简称",
-        "logo":test_setup_function(),
-        "password":"admin",
-        "remark":"test备注",
-        "username":"18230526256"
-    }
-    res = requests.put(url=url,data=dict,headers=headers)
+    url = "https://live-admin-qa1.youfenba.com/api/v1/manager/1099?"
+    headers=test_headers()
+    company = "test_测试公司",
+
+    company_short="test_测试公司简称",
+    logo=test_setup_function()
+    remark='test备注',
+    username='18230526256'
+    company = "".join(list(company)),
+    company_short = "".join(list(company_short)),
+    remark ="".join(list(remark)),
+
+    url = url + 'company'+'='+"".join(list(company))+'&'+'company_short'+'='+"".join(list(company_short))+'&'+'logo'+"="+logo+'&'+'remark'+'='+"".join(list(remark))+'&'+'username'+'='+username
+    print(url)
+
+    # dict={
+    #     "company":"11111",
+    #     "company_short":"22222",
+    #     "logo": test_setup_function(),
+    #     "remark":"test备注",
+    #     "username":"18230526256"
+    # }
+    """图片未上传成功"""
+    res = requests.put(url=url,headers=headers)
     r = res.json()
-    print(r)
+    assert r['company_short'] == company_short
+    assert r['code'] == 200
+
