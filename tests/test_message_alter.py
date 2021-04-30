@@ -33,14 +33,13 @@ def test_message_alter():
     res = requests.put(url=url,headers=headers)
     r = res.json()
     cur = datetime.datetime.now()
-    time = str(datetime.datetime.strptime(cur,'%b %d %Y')).split(' ')[3]
-    print(time)
-
-    # user_id = data_sql.test_selectsingle(field="*", table="vip_order", where="user_id" + "=" + "'" + "1099" + "'"+ 'and' +" " + "created_at" + "="+ "'"+ str(cur) +"'" )
-    # print(user_id)
-    # assert (r['data'])['id'] == 1099
-    # assert r['code'] == 200
-    # print(r)
+    io = str(cur)
+    time = io[0:10]
+    user_id = data_sql.test_selectsingle(field="*", table="vip_order", where="user_id" + "=" + "'" + "1099" + "'"+ 'and' +" " + "created_at" +" " +  "like"+ "'"+ time +"'" )
+    print(user_id)
+    assert (r['data'])['id'] == 1099
+    assert r['code'] == 200
+    print(r)
 
 
 
