@@ -20,13 +20,11 @@ def test_updata_name():
         "ids":ids,
         "name":"自动批量修改测试",
         "type_discount":"11",
-        "use_condition":"22",
-        "channel_id":"",
-        "channel_remark": "王杰佳修改",
-        "count": 1,
+        "use_condition":"22"
     }
     res= requests.post(url=url,data=dict,headers=headers)
     r=res.json()
+    print(r)
     assert r['code'] == 200
 
 
