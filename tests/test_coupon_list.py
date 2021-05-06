@@ -26,9 +26,13 @@ def test_sech1():
     print(str(ids))
     b = [str(j) for j in ids]
     # str2 = ''.join(b)
-    print(b)
+    c = (',').join(str(x) for x in b)
+    d = '"'+c+'"'
+    print(d)
     assert (((r['data'])['list'])[0])['id'] is not None
-    return b
+    return d
+
+
 
 """筛选状态为已核销的F码"""
 def test_sech2():

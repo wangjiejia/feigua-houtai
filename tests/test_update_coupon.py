@@ -16,6 +16,7 @@ headers=test_headers()
 ids=test_sech1()
 def test_updata_name():
     url = basic_url+"/api/v1/coupon/edit"
+    print(ids)
     dict={
         "ids":ids,
         "name":"自动批量修改测试",
