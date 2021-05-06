@@ -21,19 +21,14 @@ def test_sech1():
     print(x)
     ids = []
     for i in range (0,x):
-        ids1 = {(((r['data'])['list'])[i])['id']}
+        ids1 = (((r['data'])['list'])[i])['id']
         ids.append(ids1)
     print(str(ids))
-    a = ""
-    for i in range(0,x):
-
-
-
-
-
-
-
+    b = [str(j) for j in ids]
+    # str2 = ''.join(b)
+    print(b)
     assert (((r['data'])['list'])[0])['id'] is not None
+    return b
 
 """筛选状态为已核销的F码"""
 def test_sech2():
