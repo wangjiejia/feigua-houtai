@@ -67,6 +67,6 @@ class TestCalc():
                 # calc = Calculator()
                 result = get_calc.add(-1, -1)
                 # 得到相加结果之后，写断言
-                assert result == -2
+                assert result == -22
 
 
