@@ -6,6 +6,7 @@
 @IDE ：PyCharm
 @Motto：ABC(Always Be Coding)
 """
+"""使用pytest.importskip("模块名"）校验，如果没有导入模块的话，不会执行该用例；如果导入了该模块的，就执行接下来的用例"""
 import pytest
 import selenium
 from tests.test_Calculator import TestCalculator
