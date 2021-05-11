@@ -6,6 +6,8 @@
 @IDE ：PyCharm
 @Motto：ABC(Always Be Coding)
 """
+from __future__ import division
+
 """参数化测试用例"""
 from tools.gettoken import test_headers
 import requests
@@ -27,6 +29,27 @@ def test_print_log():
 def test_add(arg_1,arg_2,except1):
     result=calcul.add(arg_1,arg_2)
     assert result == except1
+
+@pytest.mark.parametrize("arg_1,arg_2,except1",[(1,1,0),(1,0,1),(1,2,-1)])
+def test_minus(arg_1,arg_2,except1):
+    result=calcul.minus(arg_1,arg_2)
+    assert result == except1
+
+@pytest.mark.parametrize("arg_1,arg_2,except1",[(1,1,1),(1,0,0),(2,1,2)])
+def test_multiply(arg_1,arg_2,except1):
+    result=calcul.multiply(arg_1,arg_2)
+    assert result == except1
+
+
+@pytest.mark.parametrize("arg_1,arg_2,except1",[(1,1,1),(1,0,pytest.raises(ZeroDivisionError)),(2,1,2)])
+def test_divide(arg_1,arg_2,except1):
+    result=calcul.divide(arg_1,arg_2)
+    if arg_2 == 0:
+            assert result is not None
+    else:
+        assert result  == except1
+
+
 
 if __name__=='__main__':
     pytest.main(['wjj_test.py'])

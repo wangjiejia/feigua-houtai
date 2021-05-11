@@ -11,3 +11,15 @@ class TestCalculator():
     def add(self,a,b):
         res= a + b
         return res
+
+    def minus(self,a,b):
+        res=a - b
+        return res
+
+    def multiply(self,a,b):
+        res = a * b
+        return res
+
+    def divide(self,a,b):
+        res = a / b
+        return res
