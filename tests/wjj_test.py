@@ -25,17 +25,22 @@ def test_print_log():
     print("计算开始")
     yield
     print("计算结束")
-
-@pytest.mark.parametrize("arg_1,arg_2,except1",[(1,2,3),(2,3,5)])
+@pytest.mark.run(order=2)
+@pytest.mark.parametrize("arg_1,arg_2,except1",[(2,2,3),(2,3,5)])
 def test_add(arg_1,arg_2,except1):
     result=calcul.add(arg_1,arg_2)
     assert result == except1
 
-@pytest.mark.parametrize("arg_1,arg_2,except1",[(1,1,0),(1,0,1),(1,2,-1)])
+
+@pytest.mark.run(order=1)
+@pytest.mark.parametrize("arg_1,arg_2,except1",[(2,1,0),(1,0,1),(1,2,-1)])
 def test_minus(arg_1,arg_2,except1):
     result=calcul.minus(arg_1,arg_2)
     assert result == except1
 
+"""使用@pytest.mark.run(order=1)控制用例的执行顺序"""
+"""使用@pytest.mark.parametrize（）控制用例的参数化"""
+@pytest.mark.run(order=3)
 @pytest.mark.parametrize("arg_1,arg_2,except1",[(1,1,1),(1,0,0),(2,1,2)])
 def test_multiply(arg_1,arg_2,except1):
     result=calcul.multiply(arg_1,arg_2)
