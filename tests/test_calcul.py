@@ -44,6 +44,7 @@ def test_minus(arg_1,arg_2,except1):
 """使用@pytest.mark.run(order=1)控制用例的执行顺序"""
 """使用@pytest.mark.parametrize（）控制用例的参数化"""
 
+
 @pytest.mark.run(order=3)
 @pytest.mark.parametrize("arg_1,arg_2,except1",[(1,1,1),(1,0,0),(2,1,2)])
 def test_multiply(arg_1,arg_2,except1):
