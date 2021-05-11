@@ -43,11 +43,11 @@ def test_multiply(arg_1,arg_2,except1):
 
 @pytest.mark.parametrize("arg_1,arg_2,except1",[(1,1,1),(1,0,pytest.raises(ZeroDivisionError)),(2,1,2)])
 def test_divide(arg_1,arg_2,except1):
-    result=calcul.divide(arg_1,arg_2)
     if arg_2 == 0:
-            assert result is not None
+        with except1:
+            assert calcul.divide(arg_1,arg_2) is not None
     else:
-        assert result  == except1
+        assert calcul.divide(arg_1,arg_2)  == except1
 
 
 
