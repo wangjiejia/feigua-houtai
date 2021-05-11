@@ -8,6 +8,6 @@
 """
 import pytest
 class TestCalculator():
-    def test_add(self,a,b):
-        res=a + b
+    def add(self,a,b):
+        res= a + b
         return res
