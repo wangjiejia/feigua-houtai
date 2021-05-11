@@ -9,6 +9,7 @@
 from __future__ import division
 
 """参数化测试用例"""
+"""在参数化中进行异常处理"""
 from tools.gettoken import test_headers
 import requests
 import pytest
