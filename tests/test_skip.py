@@ -6,6 +6,7 @@
 @IDE ：PyCharm
 @Motto：ABC(Always Be Coding)
 """
+"""测试"""
 """使用pytest.skip("skip 方法名")跳过某个方法的执行"""
 import pytest
 from tests import test_Calculator
