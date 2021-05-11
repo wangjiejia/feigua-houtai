@@ -26,6 +26,8 @@ def test_print_log():
     print("计算开始")
     yield
     print("计算结束")
+"""使用@pytest.mark.flaky(reruns=3)，遇到错误重试 """
+@pytest.mark.flaky(reruns=3, reruns_delay=5)
 @pytest.mark.run(order=2)
 @pytest.mark.parametrize("arg_1,arg_2,except1",[(2,2,3),(2,3,5)])
 def test_add(arg_1,arg_2,except1):
