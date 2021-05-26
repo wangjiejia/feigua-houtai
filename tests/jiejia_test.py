@@ -6,7 +6,7 @@
 @IDE ：PyCharm
 @Motto：ABC(Always Be Coding)
 """
-"""测试测试"""
+"""测试"""
 import pytest
 def test_jiejie():
     print("验证")
