@@ -1,0 +1,50 @@
+{
+  "uid" : "4cc81a42d5e1f4c4",
+  "name" : "test_jiejie",
+  "fullName" : "jiejia_test#test_jiejie",
+  "historyId" : "01f7e33aa37775c5174b4d53b98c4eaa",
+  "time" : {
+    "start" : 1621934368903,
+    "stop" : 1621934368903,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "jiejia_test"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-4H0T4A2"
+  }, {
+    "name" : "thread",
+    "value" : "3596-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "jiejia_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4cc81a42d5e1f4c4.json",
+  "parameterValues" : [ ]
+}

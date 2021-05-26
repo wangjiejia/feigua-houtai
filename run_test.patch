@@ -1,0 +1,16 @@
+Index: tests/run.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- tests/run.py	(revision c1b9065fb3683f1e55cff8aa438d021bf87a4f42)
++++ tests/run.py	(date 1621934365358)
+@@ -19,7 +19,7 @@
+ import allure
+ if __name__=='__main__':
+     """此时生成的报告文件为json格式"""
+-    pytest.main(["-s","--alluredir","./report","test_user_create.py"])
++    pytest.main(["-s","--alluredir","./report","C:/Users/1/PycharmProjects/feigua-houtai/tests/jiejia_test.py"])
+     """将json格式转换成html格式"""
+     os.system('allure generate ./report/ -o ./report/html/ --clean')
+     """右键使用浏览器打开正确，直接复制出去打开失败；可先通过本地渲染，再进行打开"""

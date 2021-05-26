@@ -1,0 +1,22 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "jiejia_test",
+    "children" : [ {
+      "name" : "test_jiejie",
+      "uid" : "4cc81a42d5e1f4c4",
+      "parentUid" : "dc8068b32d4d36c21c06db7e5d8a31b6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1621934368903,
+        "stop" : 1621934368903,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "dc8068b32d4d36c21c06db7e5d8a31b6"
+  } ]
+}

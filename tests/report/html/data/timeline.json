@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-4H0T4A2",
+    "children" : [ {
+      "name" : "3596-MainThread",
+      "children" : [ {
+        "name" : "test_jiejie",
+        "uid" : "4cc81a42d5e1f4c4",
+        "parentUid" : "23250aa00afc01b19ba9412d102af816",
+        "status" : "passed",
+        "time" : {
+          "start" : 1621934368903,
+          "stop" : 1621934368903,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "23250aa00afc01b19ba9412d102af816"
+    } ],
+    "uid" : "9bd8cee303ac9329ea0b620d4358792b"
+  } ]
+}
